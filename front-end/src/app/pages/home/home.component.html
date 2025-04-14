@@ -1,0 +1,9 @@
+<h1>Personnages</h1>
+<ul>
+    <li *ngFor="let character of characters">
+        <a [routerLink]="['/characters', character.reference]" class="object-contain">
+            <img src="{{character.thumbnail}}" alt="{{character.name}} image">
+        </a>
+        <a [routerLink]="['/characters', character.reference]">{{character.name}}</a>
+    </li>
+</ul>
