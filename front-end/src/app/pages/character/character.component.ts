@@ -13,7 +13,6 @@ import { Title } from '@angular/platform-browser';
 export class CharacterComponent implements OnInit {
   private route = inject(ActivatedRoute);
   characterService = inject(CharacterService);
-  private titleService = inject(Title);
   character: Character | undefined;
   reference: string = '';
   
@@ -21,7 +20,6 @@ export class CharacterComponent implements OnInit {
     this.reference = this.route.snapshot.params['reference'];
     this.characterService.getCharacter(this.reference).subscribe(data => {
       this.character = data;
-      this.titleService.setTitle(data.name);
     });
   }
 }
